@@ -1,0 +1,12 @@
+<div id="new_goal_form">
+  <h2>New Goal</h2>
+  <div class="form">
+    <%= form_for @goal, remote: true do |form| %>
+      <%= render "form_errors", target: @goal %>
+      <div><%= form.text_area :description, placeholder: "Goal" %></div>
+      <div><%= form.label "Target Date:" %></div>
+      <div><%= form.date_field :target_date %></div>
+      <div><%= form.submit "Add Goal" %></div>
+    <% end %>
+  </div>
+</div>
