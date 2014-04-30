@@ -11,8 +11,7 @@ class GoalsController < ApplicationController
   def create
     @goal = current_user.goals.new(goal_params)
     if !@goal.save
-      @target = @goal
-      render :form_errors
+      render :new
     end
   end
 
