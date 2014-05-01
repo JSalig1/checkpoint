@@ -1,7 +1,9 @@
-<div id="<%= dom_id(goal) %>">
-  <p>
-    Goal: <%= goal.description %>
-    <%= link_to "(remove)", goal, method: :delete, confirm: "Really? Remove this Goal?", remote: true %><br>
-    Target Day: <%= time_tag(goal.target_date) %>
-  </p>
+<div>
+  <%= div_for(goal) do %>
+    <p>
+      Goal: <%= goal.description %>
+      <%= link_to "(remove)", goal, method: :delete, confirm: "Really? Remove this Goal?", remote: true %><br>
+      Target Day: <%= time_tag(goal.target_date) %>
+    </p>
+  <% end %>
 </div>

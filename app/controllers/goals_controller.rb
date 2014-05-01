@@ -16,15 +16,11 @@ class GoalsController < ApplicationController
   end
 
   def destroy
-    @goal = find_goal
+    @goal = Goal.find(params[:id])
     @goal.destroy
   end
 
   private
-
-  def find_goal
-    Goal.find(params[:id])
-  end
 
   def goal_params
     params.require(:goal).permit(:description, :target_date, :status)
