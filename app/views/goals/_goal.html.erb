@@ -1,9 +1,18 @@
 <div>
   <%= div_for(goal) do %>
     <p>
+
       Goal: <%= goal.description %>
       <%= link_to "(remove)", goal, method: :delete, confirm: "Really? Remove this Goal?", remote: true %><br>
-      Target Day: <%= time_tag(goal.target_date) %>
+
+      <% if goal.status == "current" %>
+        Target Day: <%= time_tag(goal.target_date) %><br>
+        <%= form_for goal, remote: true do |form| %>
+          Complete: <%= form.check_box :status, onchange: "this.form.submit_button.click();" %>
+          <%= form.submit "Update", id: "submit_button", style: "display: none" %>
+        <% end %>
+      <% end %>
+
     </p>
   <% end %>
 </div>
