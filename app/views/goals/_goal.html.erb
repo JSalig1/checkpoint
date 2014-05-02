@@ -11,6 +11,8 @@
           Complete: <%= form.check_box :status, onchange: "this.form.submit_button.click();" %>
           <%= form.submit "Update", id: "submit_button", style: "display: none" %>
         <% end %>
+      <% else %>
+         Completed on: <%= time_tag(goal.completed_on) %><br>
       <% end %>
 
     </p>
