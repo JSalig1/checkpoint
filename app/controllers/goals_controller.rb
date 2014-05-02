@@ -18,7 +18,7 @@ class GoalsController < ApplicationController
 
   def update
     @goal = find_goal
-    @goal.update(status: "completed", completed_date: Date.today)
+    @goal.complete
   end
 
   def destroy

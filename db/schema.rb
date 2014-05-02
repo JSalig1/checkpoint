@@ -18,12 +18,12 @@ ActiveRecord::Schema.define(version: 20140502153003) do
 
   create_table "goals", force: true do |t|
     t.integer  "user_id"
-    t.text     "description",                                    null: false
-    t.date     "target_date",                                    null: false
-    t.string   "status",         limit: 128, default: "current", null: false
+    t.text     "description",                                  null: false
+    t.date     "target_date",                                  null: false
+    t.string   "status",       limit: 128, default: "current", null: false
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.date     "completed_date"
+    t.date     "completed_on"
   end
 
   add_index "goals", ["user_id"], name: "index_goals_on_user_id", using: :btree
