@@ -1,8 +1,21 @@
 <div>
   <%= div_for(step) do %>
     <p>
+
       Step: <%= step.description %>
-      Target Day: <%= time_tag(step.target_date) %><br>
+
+      <% if step.status == "current" %>
+        Target Day: <%= time_tag(step.target_date) %><br>
+
+        <%= form_for step, remote: true do |form| %>
+          Complete: <%= form.check_box :status, onchange: "this.form.submit_button.click();" %>
+          <%= form.submit "Update", id: "submit_button", style: "display: none" %>
+        <% end %>
+
+      <% else %>
+         Completed on: <%= time_tag(step.completed_on) %><br>
+      <% end %>
+
     </p>
   <% end %>
 </div>
