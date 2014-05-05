@@ -7,10 +7,13 @@
 
       <% if goal.status == "current" %>
         Target Day: <%= time_tag(goal.target_date) %><br>
+        Goal Steps: <%= link_to "Add", [:new, goal, :step], id: "new_goal_step", remote: true %>
+
         <%= form_for goal, remote: true do |form| %>
           Complete: <%= form.check_box :status, onchange: "this.form.submit_button.click();" %>
           <%= form.submit "Update", id: "submit_button", style: "display: none" %>
         <% end %>
+
       <% else %>
          Completed on: <%= time_tag(goal.completed_on) %><br>
       <% end %>
