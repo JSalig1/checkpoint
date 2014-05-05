@@ -13,6 +13,11 @@ class StepsController < ApplicationController
     end
   end
 
+  def update
+    @step = Step.find(params[:id])
+    @step.complete
+  end
+
   private
 
   def step_params
