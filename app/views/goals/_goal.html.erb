@@ -10,7 +10,7 @@
         <div class="goal_step_links">
           Goal Steps: <%= link_to "Add", [:new, goal, :step], id: "new_goal_step", remote: true %>
           <% if goal.has_steps? %>
-          <%= link_to "View", goal %>
+            <%= link_to "View", goal %>
           <% end %>
         </div>
 
