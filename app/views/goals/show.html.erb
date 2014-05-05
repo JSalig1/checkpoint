@@ -1,0 +1,17 @@
+<h1>Goal: <%= @goal.description %></h1>
+
+<nav class="nav_bar">
+  <%= link_to "New Step", [:new, @goal, :step], id: "new_link", remote: true %>
+</nav>
+
+<h2>Current steps for this goal</h2>
+
+<div id="current_steps">
+  <%= render @current_steps %>
+</div>
+
+<h2>Completed steps for this goal</h2>
+
+<div id="completed_steps">
+  <%= render @completed_steps %>
+</div>

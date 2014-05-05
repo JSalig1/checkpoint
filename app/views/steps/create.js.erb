@@ -1,1 +1,3 @@
 $('#new_goal_step_form').remove();
+$('#<%= dom_id(@goal) %> .goal_step_links').append('<%= j link_to "View", @goal %>');
+$('#current_steps').prepend('<%= j render(@step) %>');

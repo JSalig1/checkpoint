@@ -16,6 +16,12 @@ class GoalsController < ApplicationController
     end
   end
 
+  def show
+    @goal = find_goal
+    @current_steps = @goal.current_steps
+    @completed_steps = @goal.completed_steps
+  end
+
   def update
     @goal = find_goal
     @goal.complete

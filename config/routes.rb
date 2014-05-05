@@ -5,7 +5,7 @@ Checkpoint::Application.routes.draw do
   resource :dashboard, only: [:show]
 
   resources :goals, except: [:edit] do
-    resources :steps, only: [:new, :create, :index]
+    resources :steps, only: [:new, :create, :index, :destroy]
   end
 
   resources :steps, only: [:index]
