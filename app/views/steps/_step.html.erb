@@ -3,6 +3,7 @@
     <p>
 
       Step: <%= step.description %>
+      <%= link_to "(remove)", step, method: :delete, confirm: "Really? Remove this Step?", remote: true %><br>
 
       <% if step.status == "current" %>
         Target Day: <%= time_tag(step.target_date) %><br>

@@ -18,6 +18,11 @@ class StepsController < ApplicationController
     @step.complete
   end
 
+  def destroy
+    @step = Step.find(params[:id])
+    @step.destroy
+  end
+
   private
 
   def step_params
