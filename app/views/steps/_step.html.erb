@@ -1,0 +1,8 @@
+<div>
+  <%= div_for(step) do %>
+    <p>
+      Step: <%= step.description %>
+      Target Day: <%= time_tag(step.target_date) %><br>
+    </p>
+  <% end %>
+</div>

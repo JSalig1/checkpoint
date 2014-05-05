@@ -2,13 +2,13 @@ class StepsController < ApplicationController
 
   def new
     @goal = current_user.goals.find(params[:goal_id])
-    @step = Step.new
+    @step = @goal.steps.new
   end
 
   def create
-    goal = current_user.goals.find(params[:goal_id])
-    step = current_user.steps.new(step_params)
-    if !step.save
+    @goal = current_user.goals.find(params[:goal_id])
+    @step = @goal.steps.new(step_params)
+    if !@step.save
       render :new
     end
   end
