@@ -29,7 +29,7 @@ class GoalsController < ApplicationController
   def update
     @goal = find_goal
     @goal.update(goal_params)
-    @goal.add_date_completed
+    @goal.set_date_completed
   end
 
   def destroy

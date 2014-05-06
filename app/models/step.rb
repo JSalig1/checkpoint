@@ -3,7 +3,13 @@ class Step < ActiveRecord::Base
   validates :description, presence: true
   validates :target_date, presence: true
 
-  def complete
-    update(status: "completed", completed_on: Date.today)
+  def completed?
+    status == "completed"
+  end
+
+  def set_date_completed
+    if completed?
+      update(completed_on: Date.today)
+    end
   end
 end

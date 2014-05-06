@@ -13,17 +13,26 @@ class StepsController < ApplicationController
     end
   end
 
+  def edit
+    @step = find_step
+  end
+
   def update
-    @step = Step.find(params[:id])
-    @step.complete
+    @step = find_step
+    @step.update(step_params)
+    @step.set_date_completed
   end
 
   def destroy
-    @step = Step.find(params[:id])
+    @step = find_step
     @step.destroy
   end
 
   private
+
+  def find_step
+    Step.find(params[:id])
+  end
 
   def step_params
     params.require(:step).permit(:description, :target_date, :status)
