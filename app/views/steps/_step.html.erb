@@ -3,7 +3,6 @@
     <p>
 
       Step: <%= step.description %>
-      <%= link_to "(remove)", step, method: :delete, confirm: "Really? Remove this Step?", remote: true %><br>
       <%= link_to "(edit)", [:edit, step], remote: true %><br>
       <% if step.status == "current" %>
         Target Day: <%= time_tag(step.target_date) %><br>
@@ -16,6 +15,8 @@
       <% else %>
          Completed on: <%= time_tag(step.completed_on) %><br>
       <% end %>
+
+      <%= link_to "Remove this Step", step, method: :delete, confirm: "Really? Remove this Step?", remote: true %><br>
 
     </p>
   <% end %>
