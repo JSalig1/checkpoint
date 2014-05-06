@@ -9,7 +9,7 @@ class Goal < ActiveRecord::Base
   end
 
   def add_date_completed
-    if status == "completed"
+    if completed?
       update(completed_on: Date.today)
     end
   end
