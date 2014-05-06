@@ -22,9 +22,14 @@ class GoalsController < ApplicationController
     @completed_steps = @goal.completed_steps
   end
 
+  def edit
+    @goal = find_goal
+  end
+
   def update
     @goal = find_goal
-    @goal.complete
+    @goal.update(goal_params)
+    @goal.add_date_completed
   end
 
   def destroy
