@@ -4,13 +4,13 @@
 
       Step: <%= step.description %>
       <%= link_to "(remove)", step, method: :delete, confirm: "Really? Remove this Step?", remote: true %><br>
-
+      <%= link_to "(edit)", [:edit, step], remote: true %><br>
       <% if step.status == "current" %>
         Target Day: <%= time_tag(step.target_date) %><br>
 
-        <%= form_for step, remote: true do |form| %>
-          Complete: <%= form.check_box :status, onchange: "this.form.submit_button.click();" %>
-          <%= form.submit "Update", id: "submit_button", style: "display: none" %>
+        <%= form_for step, builder: CheckToComplete, remote: true do |form| %>
+          Complete: <%= form.check_to_complete %>
+          <%= form.hidden_submit %>
         <% end %>
 
       <% else %>

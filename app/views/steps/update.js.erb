@@ -1,2 +1,7 @@
-$("#<%= dom_id(@step) %>").remove();
-$("#completed_steps").append("<%= j render @step %>");
+<% if @step.completed? %>
+  $("#<%= dom_id(@step) %>").remove();
+  $("#completed_steps").prepend("<%= j render @step %>");
+<% else %>
+  $('#edit_goal_step_form').remove();
+  $("#<%= dom_id(@step) %>").html("<%= j render @step %>");
+<% end %>

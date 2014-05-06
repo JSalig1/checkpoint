@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
   include Clearance::User  
-  has_many :goals
+  has_many :goals, dependent: :destroy
   has_many :steps, through: :goals
 
   def current_goals
