@@ -1,2 +1,7 @@
-$("#<%= dom_id(@goal) %>").remove();
-$("#completed_goals").append("<%= j render @goal %>");
+<% if @goal.completed? %>
+  $("#<%= dom_id(@goal) %>").remove();
+  $("#completed_goals").prepend("<%= j render @goal %>");
+<% else %>
+  $('#edit_goal_form').remove();
+  $("#<%= dom_id(@goal) %>").html("<%= j render @goal %>");
+<% end %>
