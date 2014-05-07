@@ -11,10 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140505174448) do
+ActiveRecord::Schema.define(version: 20140507170144) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "coaching_relationships", force: true do |t|
+    t.integer  "coach_id"
+    t.integer  "athlete_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "coaching_relationships", ["athlete_id"], name: "index_coaching_relationships_on_athlete_id", using: :btree
+  add_index "coaching_relationships", ["coach_id"], name: "index_coaching_relationships_on_coach_id", using: :btree
 
   create_table "goals", force: true do |t|
     t.integer  "user_id"
