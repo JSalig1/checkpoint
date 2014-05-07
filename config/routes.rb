@@ -12,4 +12,6 @@ Checkpoint::Application.routes.draw do
 
   resources :athletes, only: [:index]
 
+  resources :users, only: [:show]
+
 end

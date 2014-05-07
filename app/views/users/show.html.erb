@@ -1,0 +1,9 @@
+<h1><%= @user.email %>'s Profile</h1>
+
+<h2>Current</h2>
+
+<%= render partial: 'current_goal', collection: @user.current_goals %>
+
+<h2>Completed</h2>
+
+<%= render partial: 'completed_goal', collection: @user.completed_goals %>
