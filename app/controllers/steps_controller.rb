@@ -20,7 +20,7 @@ class StepsController < ApplicationController
   def update
     @step = find_step
     @step.update(step_params)
-    @step.add_date_completed
+    @step.set_date_completed
   end
 
   def destroy

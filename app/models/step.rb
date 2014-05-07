@@ -7,7 +7,7 @@ class Step < ActiveRecord::Base
     status == "completed"
   end
 
-  def add_date_completed
+  def set_date_completed
     if completed?
       update(completed_on: Date.today)
     end
