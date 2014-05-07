@@ -10,4 +10,6 @@ Checkpoint::Application.routes.draw do
 
   resources :steps, only: [:edit, :update, :destroy]
 
+  resources :athletes, only: [:index]
+
 end

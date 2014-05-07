@@ -3,6 +3,12 @@ class User < ActiveRecord::Base
   has_many :goals, dependent: :destroy
   has_many :steps, through: :goals
 
+  has_many :coaching_relationships,
+    foreign_key: :coach_id,
+    dependent: :destroy
+
+  has_many :athletes, through: :coaching_relationships
+
   def current_goals
     goals.where(status: "current")
   end
