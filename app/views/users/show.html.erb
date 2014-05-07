@@ -2,20 +2,8 @@
 
 <h2>Current</h2>
 
-<% @user.current_goals.each do |goal| %>
-  <div>
-    <%= goal.description %><br>
-    Target Day: <%= time_tag(goal.target_date) %>
-  </div>
-  <br>
-<% end %>
+<%= render partial: 'current_goal', collection: @user.current_goals %>
 
 <h2>Completed</h2>
 
-<% @user.completed_goals.each do |goal| %>
-  <div>
-    <%= goal.description %><br>
-    Completed on: <%= time_tag(goal.completed_on) %>
-  </div>
-  <br>
-<% end %>
+<%= render partial: 'completed_goal', collection: @user.completed_goals %>
