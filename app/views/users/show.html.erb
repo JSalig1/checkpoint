@@ -1,0 +1,21 @@
+<h1><%= @user.email %>'s Profile</h1>
+
+<h2>Current</h2>
+
+<% @user.current_goals.each do |goal| %>
+  <div>
+    <%= goal.description %><br>
+    Target Day: <%= time_tag(goal.target_date) %>
+  </div>
+  <br>
+<% end %>
+
+<h2>Completed</h2>
+
+<% @user.completed_goals.each do |goal| %>
+  <div>
+    <%= goal.description %><br>
+    Completed on: <%= time_tag(goal.completed_on) %>
+  </div>
+  <br>
+<% end %>
