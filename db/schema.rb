@@ -17,8 +17,8 @@ ActiveRecord::Schema.define(version: 20140507170144) do
   enable_extension "plpgsql"
 
   create_table "coaching_relationships", force: true do |t|
-    t.integer  "coach_id"
-    t.integer  "athlete_id"
+    t.integer  "coach_id",   null: false
+    t.integer  "athlete_id", null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end

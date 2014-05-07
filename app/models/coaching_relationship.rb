@@ -11,7 +11,7 @@ class CoachingRelationship < ActiveRecord::Base
   
   def cannot_coach_yourself
     if coach_id == athlete_id
-      errors.add(:base, "This is unnecessary.")
+      errors.add(:base, "You cannot coach yourself.")
     end
   end
   
