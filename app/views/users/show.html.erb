@@ -1,5 +1,13 @@
 <h1><%= @user.email %>'s Profile</h1>
 
+<div id="coaching-button">
+<% if current_user.coaching? @user %>
+  <%= button_to "Un-coach", uncoach_user_path(@user), method: :delete,  remote: true %>
+<% else %>
+  <%= button_to "Coach", coach_user_path(@user), remote: true %>
+<% end %>
+</div>
+
 <h2>Current</h2>
 
 <%= render partial: 'current_goal', collection: @user.current_goals %>
