@@ -12,6 +12,11 @@ Checkpoint::Application.routes.draw do
 
   resources :athletes, only: [:index]
 
-  resources :users, only: [:show]
+  resources :users, only: [:show] do
+    member do
+      post "/coach" => "coaching_relationships#create"
+      delete "/stopcoach" => "coaching_relationships#destroy"
+    end
+  end
 
 end

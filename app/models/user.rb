@@ -16,4 +16,16 @@ class User < ActiveRecord::Base
   def completed_goals
     goals.where(status: "completed")
   end
+
+  def coach(athlete)
+    coaching_relationships.create(athlete: athlete)
+  end
+  
+  def coaching?(athlete)
+    athlete_ids.include? athlete.id
+  end
+  
+  def uncoach(athlete)
+    athletes.destroy athlete
+  end
 end
