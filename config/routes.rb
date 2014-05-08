@@ -13,9 +13,9 @@ Checkpoint::Application.routes.draw do
   resources :athletes, only: [:index]
 
   resources :users, only: [:show] do
-    member do # /users/:id
-      post "/coach" => "coaching_relationships#create" # /users/:id/follow
-      delete "/uncoach" => "coaching_relationships#destroy" # /users/:id/unfollow
+    member do
+      post "/coach" => "coaching_relationships#create"
+      delete "/uncoach" => "coaching_relationships#destroy"
     end
   end
 
