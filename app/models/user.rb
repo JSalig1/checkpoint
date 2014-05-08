@@ -26,6 +26,6 @@ class User < ActiveRecord::Base
   end
   
   def uncoach(athlete)
-    coaching_relationships.destroy(athlete: athlete)
+    athletes.destroy athlete
   end
 end

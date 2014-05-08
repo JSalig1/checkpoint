@@ -15,7 +15,7 @@ Checkpoint::Application.routes.draw do
   resources :users, only: [:show] do
     member do
       post "/coach" => "coaching_relationships#create"
-      delete "/uncoach" => "coaching_relationships#destroy"
+      delete "/stopcoach" => "coaching_relationships#destroy"
     end
   end
 
