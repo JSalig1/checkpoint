@@ -22,6 +22,7 @@
          <br>Completed on: <%= time_tag(goal.completed_on) %><br>
       <% end %>
 
+      <%= link_to "Request Review", [:new, goal, :review_request], remote: true %><br>
       <%= link_to "Remove this Goal", goal, method: :delete, confirm: "Really? Remove this Goal?", remote: true %><br>
     </p>
   <% end %>

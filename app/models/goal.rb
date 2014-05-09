@@ -1,6 +1,7 @@
 class Goal < ActiveRecord::Base
   belongs_to :user
   has_many :steps, dependent: :destroy
+  has_many :review_requests, dependent: :destroy
   validates :description, presence: true
   validates :target_date, presence: true
 

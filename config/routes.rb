@@ -6,6 +6,7 @@ Checkpoint::Application.routes.draw do
 
   resources :goals do
     resources :steps, only: [:new, :create, :index]
+    resources :review_requests, only: [:new, :create]
   end
 
   resources :steps, only: [:edit, :update, :destroy]
