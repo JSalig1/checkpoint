@@ -39,9 +39,9 @@ ActiveRecord::Schema.define(version: 20140508195938) do
   add_index "goals", ["user_id"], name: "index_goals_on_user_id", using: :btree
 
   create_table "review_requests", force: true do |t|
-    t.integer  "athlete_id"
-    t.integer  "coach_id"
-    t.integer  "goal_id"
+    t.integer  "athlete_id", null: false
+    t.integer  "coach_id",   null: false
+    t.integer  "goal_id",    null: false
     t.text     "body"
     t.datetime "created_at"
     t.datetime "updated_at"

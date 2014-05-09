@@ -6,13 +6,11 @@ class User < ActiveRecord::Base
   has_many :coaching_relationships,
     foreign_key: :coach_id,
     dependent: :destroy
-
   has_many :athletes, through: :coaching_relationships
 
   has_many :coaching_relationships,
     foreign_key: :athlete_id,
     dependent: :destroy
-
   has_many :coaches, through: :coaching_relationships
   
   has_many :review_requests, foreign_key: :athlete_id

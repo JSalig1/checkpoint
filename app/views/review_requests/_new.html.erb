@@ -9,7 +9,7 @@
   </div>
 
   <div class="form">
-    <%= form_for  [@reviewable_goal, @review_request], remote: true do |form| %>
+    <%= form_for [@reviewable_goal, @review_request], remote: true do |form| %>
       <%= form.hidden_field :goal_id, value: @reviewable_goal.id %>
       For coach: <%= form.collection_select :coach_id, current_user.coaches, :id, :email %><br>
       <%= form.text_area :body, placeholder: "Comment on this Goal" %><br>
