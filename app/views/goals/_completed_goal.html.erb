@@ -1,0 +1,10 @@
+<div>
+  <%= div_for(completed_goal) do %>
+    <p>
+      Goal: <%= completed_goal.description %><br>
+      Completed on: <%= time_tag(completed_goal.completed_on) %><br>
+
+      <%= link_to "Remove this Goal", completed_goal, method: :delete, confirm: "Really? Remove this Goal?", remote: true %><br>
+    </p>
+  <% end %>
+</div>

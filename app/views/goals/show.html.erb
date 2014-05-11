@@ -7,11 +7,13 @@
 <h2>Current steps for this goal</h2>
 
 <div id="current_steps">
-  <%= render @current_steps %>
+
+  <%= render partial: 'steps/current_step', collection: @current_steps %>
 </div>
 
 <h2>Completed steps for this goal</h2>
 
 <div id="completed_steps">
-  <%= render @completed_steps %>
+
+  <%= render partial: 'steps/completed_step', collection: @completed_steps %>
 </div>

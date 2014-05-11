@@ -12,8 +12,10 @@ class User < ActiveRecord::Base
     foreign_key: :athlete_id,
     dependent: :destroy
   has_many :coaches, through: :coaching_relationships
-  
+
   has_many :review_requests, foreign_key: :athlete_id
+
+  has_many :review_requests, foreign_key: :coach_id
 
   def current_goals
     goals.where(status: "current")
@@ -22,6 +24,15 @@ class User < ActiveRecord::Base
   def completed_goals
     goals.where(status: "completed")
   end
+
+  def owns_step?(step)
+    steps.include? step
+  end
+
+  def owns_goal?(goal)
+    goals.include? goal
+  end
+  
 
   def coach(athlete)
     coaching_relationships.create(athlete: athlete)
