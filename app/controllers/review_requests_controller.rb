@@ -21,7 +21,12 @@ class ReviewRequestsController < ApplicationController
   private
 
   def review_request_params
-    params.require(:review_request).permit(:body, :goal_id, :coach_id, :athlete_id)
+    params.require(:review_request).permit(
+      :body,
+      :goal_id,
+      :coach_id,
+      :athlete_id
+      )
   end
 
 end

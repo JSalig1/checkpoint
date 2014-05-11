@@ -1,7 +1,7 @@
 <div>
   <%= div_for(current_goal) do %>
     <p>
-      Goal: <%= current_goal.description %><br>
+      <h3>Goal: <%= current_goal.description %></h3>
       Target Day: <%= time_tag(current_goal.target_date) %>
       <%= link_to "(edit)", [:edit, current_goal], remote: true %>
 

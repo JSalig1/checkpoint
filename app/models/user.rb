@@ -32,7 +32,6 @@ class User < ActiveRecord::Base
   def owns_goal?(goal)
     goals.include? goal
   end
-  
 
   def coach(athlete)
     coaching_relationships.create(athlete: athlete)

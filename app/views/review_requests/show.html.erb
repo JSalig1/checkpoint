@@ -9,7 +9,7 @@
 <div>
   <%= render partial: 'goals/current_goal', object: @goal %>
 </div>
-<br>
+
 <div class="goal_step_links">
   Steps: <%= link_to "New Step", [:new, @goal, :step], id: "new_link", remote: true %>
   <div id="current_steps">

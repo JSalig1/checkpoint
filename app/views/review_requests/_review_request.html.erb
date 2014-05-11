@@ -1,16 +1,14 @@
 <div>
   <%= div_for(review_request) do %>
-    <p>
-      Athlete: <%= review_request.athlete.email %><br>
-      Date: <%= time_tag(review_request.created_at) %>
-      <h3>Goal</h3>
-      <%= review_request.goal.description %> by 
-      <%= time_tag(review_request.goal.target_date) %>
-      <h3>Checkpoints</h3>
-      <ul>
-        <%= render partial: 'reviewable_step', collection: review_request.goal.steps %>
-      </ul>
-    </p>
+    <p>Athlete: <%= review_request.athlete.email %></p>
+    Date: <%= time_tag(review_request.created_at) %>
+    <h3>Goal</h3>
+    <%= review_request.goal.description %> by 
+    <%= time_tag(review_request.goal.target_date) %>
+    <h3>Checkpoints</h3>
+    <ul>
+      <%= render partial: 'reviewable_step', collection: review_request.goal.steps %>
+    </ul>
     <%= link_to "Review and Respond", review_request %>
   <% end %>
 </div>
