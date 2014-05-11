@@ -1,0 +1,15 @@
+<div>
+  <%= div_for(current_step) do %>
+    <h3>Step: <%= current_step.description %></h3>
+    <p>Target Day: <%= time_tag(current_step.target_date) %></p>
+
+    <% if current_user.owns_step? current_step %>
+      <%= form_for current_step, builder: CheckToComplete, remote: true do |form| %>
+        Complete: <%= form.check_to_complete %>
+        <%= form.hidden_submit %>
+      <% end %>
+    <% end %>
+    <%= link_to "Edit this Step", [:edit, current_step], remote: true %>
+    <%= link_to "Remove this Step", current_step, method: :delete, confirm: "Really? Remove this Step?", remote: true %>
+  <% end %>
+</div>

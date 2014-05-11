@@ -1,0 +1,26 @@
+<div>
+  <%= div_for(current_goal) do %>
+    <p>
+      <h3>Goal: <%= current_goal.description %></h3>
+      Target Day: <%= time_tag(current_goal.target_date) %>
+      <%= link_to "(edit)", [:edit, current_goal], remote: true %>
+
+      <% if current_user.owns_goal? current_goal %>
+        <div class="goal_step_links">
+          Goal Steps: <%= link_to "Add", [:new, current_goal, :step], id: "new_goal_step", remote: true %>
+          <% if current_goal.has_steps? %>
+            <%= link_to "View", current_goal %>
+          <% end %>
+        </div>
+
+        <%= form_for current_goal, builder: CheckToComplete, remote: true do |form| %>
+          Complete: <%= form.check_to_complete %>
+          <%= form.hidden_submit %>
+        <% end %>
+
+        <%= link_to "Request Review", [:new, current_goal, :review_request], remote: true %><br>
+        <%= link_to "Remove this Goal", current_goal, method: :delete, confirm: "Really? Remove this Goal?", remote: true %><br>
+      <% end %>
+    </p>
+  <% end %>
+</div>

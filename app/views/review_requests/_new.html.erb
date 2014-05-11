@@ -1,8 +1,10 @@
 <div id="new_review_request_form">
   <h2>New Review Request</h2>
   <div>
+    <h3>Goal</h3>
     <%= @reviewable_goal.description %> by
     <%= time_tag(@reviewable_goal.target_date) %>
+    <h3>Checkpoints</h3>
     <ul>
       <%= render partial: 'reviewable_step', collection: @reviewable_goal.steps %>
     </ul>
@@ -10,7 +12,6 @@
 
   <div class="form">
     <%= form_for [@reviewable_goal, @review_request], remote: true do |form| %>
-      <%= form.hidden_field :goal_id, value: @reviewable_goal.id %>
       For coach: <%= form.collection_select :coach_id, current_user.coaches, :id, :email %><br>
       <%= form.text_area :body, placeholder: "Comment on this Goal" %><br>
       <%= form.submit "Send Review Request" %>

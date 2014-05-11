@@ -13,6 +13,8 @@ Checkpoint::Application.routes.draw do
 
   resources :athletes, only: [:index]
 
+  resources :review_requests, only: [:index, :show]
+
   resources :users, only: [:show] do
     member do
       post "/coach" => "coaching_relationships#create"

@@ -1,0 +1,21 @@
+<h2>Review requested by <%= @review_request.athlete.email %></h2>
+
+<nav class="nav_bar">
+  <%= link_to "Finished Reviewing", review_requests_path %>
+</nav>
+
+<p><%= @review_request.body %></p>
+
+<div>
+  <%= render partial: 'goals/current_goal', object: @goal %>
+</div>
+
+<div class="goal_step_links">
+  Steps: <%= link_to "New Step", [:new, @goal, :step], id: "new_link", remote: true %>
+  <div id="current_steps">
+    <%= render partial: 'steps/current_step', collection: @goal.current_steps %>
+  </div>
+  <div id="current_steps">
+    <%= render partial: 'steps/completed_step', collection: @goal.completed_steps %>
+  </div>
+</div>

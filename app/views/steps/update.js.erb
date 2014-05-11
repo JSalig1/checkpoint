@@ -1,7 +1,7 @@
 <% if @step.completed? %>
   $("#<%= dom_id(@step) %>").remove();
-  $("#completed_steps").prepend("<%= j render @step %>");
+  $("#completed_steps").append("<%= j render partial: 'completed_step', object: @step %>");
 <% else %>
   $('#edit_goal_step_form').remove();
-  $("#<%= dom_id(@step) %>").html("<%= j render @step %>");
+  $("#<%= dom_id(@step) %>").html("<%= j render partial: 'current_step', object: @step %>");
 <% end %>

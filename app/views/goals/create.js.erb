@@ -1,2 +1,2 @@
 $('#new_goal_form').remove();
-$('#current_goals').prepend('<%= j render(@goal) %>');
+$('#current_goals').append('<%= j render partial: "current_goal", object: @goal %>');

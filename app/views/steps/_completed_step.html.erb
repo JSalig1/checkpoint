@@ -1,0 +1,10 @@
+<div>
+  <%= div_for(completed_step) do %>
+    <h3>Step: <%= completed_step.description %></h3>
+    <p>Completed on: <%= time_tag(completed_step.completed_on) %></p>
+
+    <% if current_user.owns_step? completed_step %>
+      <p><%= link_to "Remove this Step", completed_step, method: :delete, confirm: "Really? Remove this Step?", remote: true %></p>
+    <% end %>
+  <% end %>
+</div>
