@@ -1,3 +1,25 @@
+@import "bourbon";
+@import "neat";
+
+.main-body {
+  @include outer-container;
+  background-color: grey;
+}
+
+#current_goals {
+  @include span-columns(12);
+  background-color: red;
+}
+
+.current-goal {
+  @include span-columns(3.9);
+  background-color: white;
+}
+
+.completed-goal {
+  @include span-columns(3.9);
+  background-color: white;
+}
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
@@ -9,5 +31,4 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
- *= require_tree .
  */
