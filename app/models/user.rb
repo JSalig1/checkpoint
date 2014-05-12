@@ -14,7 +14,6 @@ class User < ActiveRecord::Base
   has_many :coaches, through: :coaching_relationships
 
   has_many :review_requests, foreign_key: :athlete_id
-
   has_many :review_requests, foreign_key: :coach_id
 
   def current_goals

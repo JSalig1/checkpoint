@@ -6,4 +6,8 @@ class ReviewRequest < ActiveRecord::Base
   validates :coach_id, presence: true
   validates :athlete_id, presence: true
   validates :goal_id, presence: true
+
+  def goal_steps
+    goal.steps
+  end
 end

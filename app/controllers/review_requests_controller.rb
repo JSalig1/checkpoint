@@ -10,7 +10,8 @@ class ReviewRequestsController < ApplicationController
   end
 
   def create
-    ReviewRequest.create(review_request_params)
+    @reviewable_goal = Goal.find(params[:goal_id])
+    @reviewable_goal.review_requests.create(review_request_params)
   end
   
   def show
@@ -23,10 +24,10 @@ class ReviewRequestsController < ApplicationController
   def review_request_params
     params.require(:review_request).permit(
       :body,
-      :goal_id,
-      :coach_id,
-      :athlete_id
-      )
+      :coach_id
+    ).merge(
+      athlete_id: current_user.id
+    )
   end
 
 end

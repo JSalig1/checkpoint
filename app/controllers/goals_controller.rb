@@ -48,7 +48,7 @@ class GoalsController < ApplicationController
       :description,
       :target_date,
       :status
-      )
+    )
   end
 
 end

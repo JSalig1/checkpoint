@@ -7,7 +7,7 @@
     <%= time_tag(review_request.goal.target_date) %>
     <h3>Checkpoints</h3>
     <ul>
-      <%= render partial: 'reviewable_step', collection: review_request.goal.steps %>
+      <%= render partial: 'reviewable_step', collection: review_request.goal_steps %>
     </ul>
     <%= link_to "Review and Respond", review_request %>
   <% end %>

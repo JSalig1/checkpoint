@@ -43,7 +43,7 @@ class StepsController < ApplicationController
       :description,
       :target_date,
       :status
-      )
+    )
   end
 
 end
