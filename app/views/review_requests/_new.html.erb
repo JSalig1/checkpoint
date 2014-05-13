@@ -1,20 +1,22 @@
-<div id="new_review_request_form">
-  <h2>New Review Request</h2>
-  <div>
-    <h3>Goal</h3>
-    <%= @reviewable_goal.description %> by
-    <%= time_tag(@reviewable_goal.target_date) %>
-    <h3>Checkpoints</h3>
-    <ul>
-      <%= render partial: 'reviewable_step', collection: @reviewable_goal.steps %>
-    </ul>
-  </div>
+<div id="content-wrapper">
+  <div id="new_review_request_form", class="form-pop">
+    <h2>New Review Request</h2>
+    <div>
+      <h3>Goal</h3>
+      <%= @reviewable_goal.description %> by
+      <%= time_tag(@reviewable_goal.target_date) %>
+      <h3>Checkpoints</h3>
+      <ul>
+        <%= render partial: 'reviewable_step', collection: @reviewable_goal.steps %>
+      </ul>
+    </div>
 
-  <div class="form">
-    <%= form_for [@reviewable_goal, @review_request], remote: true do |form| %>
-      For coach: <%= form.collection_select :coach_id, current_user.coaches, :id, :email %><br>
-      <%= form.text_area :body, placeholder: "Comment on this Goal" %><br>
-      <%= form.submit "Send Review Request" %>
-    <% end %>
+    <div class="form">
+      <%= form_for [@reviewable_goal, @review_request], remote: true do |form| %>
+        For coach: <%= form.collection_select :coach_id, current_user.coaches, :id, :email %><br>
+        <%= form.text_area :body, placeholder: "Comment on this Goal" %><br>
+        <%= form.submit "Send Review Request" %>
+      <% end %>
+    </div>
   </div>
 </div>

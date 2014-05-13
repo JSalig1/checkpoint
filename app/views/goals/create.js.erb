@@ -1,2 +1,5 @@
-$('#new_goal_form').remove();
+$("#content-wrapper").animate({
+    marginBottom: "0in"
+  }, 400 );
+$('#new_goal_form').fadeOut(400);
 $('#current_goals').append('<%= j render partial: "current_goal", object: @goal %>');
