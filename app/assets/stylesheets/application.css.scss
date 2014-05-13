@@ -13,10 +13,7 @@
 .form-pop {
   @include span-columns(4.05);
   @include shift(2.45);
-  padding-left: .5em;
-  padding-right: .5em;
-  padding-top: .2em;
-  padding-bottom: 1.5em;
+  padding: 0.2em 0.5em;
   margin-bottom: 1em;
   border-radius: 0.4em;
   border: solid black;
@@ -28,16 +25,12 @@
   @include span-columns(12);
 }
 
-.current-goal {
+.current-goal, .completed-goal {
   @include span-columns(4);
   @include omega(3n);
-  position: relative;
 
   .goal {
-    padding-left: .5em;
-    padding-right: .5em;
-    padding-top: .2em;
-    padding-bottom: .2em;
+    padding: 0.2em 0.5em;
     margin-bottom: 1em;
     background-color: white;
     border-radius: 0.4em 1.5em 0.4em 1.5em;
@@ -45,21 +38,6 @@
   }
 }
 
-.completed-goal {
-  @include span-columns(4);
-  @include omega(3n);
-
-  .goal {
-    padding-left: .5em;
-    padding-right: .5em;
-    padding-top: .2em;
-    padding-bottom: .2em;
-    margin-bottom: 1em;
-    background-color: white;
-    border-radius: 0.4em 1.5em 0.4em 1.5em;
-    border: solid black;
-  }
-}
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
