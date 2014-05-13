@@ -12,16 +12,16 @@
 
 .form-pop {
   @include span-columns(4.05);
-	@include shift(2.45);
-	padding-left: .5em;
-	padding-right: .5em;
-	padding-top: .2em;
-	padding-bottom: 1.5em;
-	margin-bottom: 1em;
-	border-radius: 0.4em;
-	border: solid black;
+  @include shift(2.45);
+  padding-left: .5em;
+  padding-right: .5em;
+  padding-top: .2em;
+  padding-bottom: 1.5em;
+  margin-bottom: 1em;
+  border-radius: 0.4em;
+  border: solid black;
   background-color: Coral;
-	position: absolute;
+  position: absolute;
 }
 
 #current_goals {
@@ -30,33 +30,33 @@
 
 .current-goal {
   @include span-columns(4);
-	@include omega(3n);
-	position: relative;
-	.goal {
-		padding-left: .5em;
-		padding-right: .5em;
-		padding-top: .2em;
-		padding-bottom: .2em;
-		margin-bottom: 1em;
-	  background-color: white;
-		border-radius: 0.4em 1.5em 0.4em 1.5em;
-		border: solid black;
-	}
+  @include omega(3n);
+  position: relative;
+  .goal {
+    padding-left: .5em;
+    padding-right: .5em;
+    padding-top: .2em;
+    padding-bottom: .2em;
+    margin-bottom: 1em;
+    background-color: white;
+    border-radius: 0.4em 1.5em 0.4em 1.5em;
+    border: solid black;
+  }
 }
 
 .completed-goal {
   @include span-columns(4);
-	@include omega(3n);
-	.goal {
-		padding-left: .5em;
-		padding-right: .5em;
-		padding-top: .2em;
-		padding-bottom: .2em;
-		margin-bottom: 1em;
-	  background-color: white;
-		border-radius: 0.4em 1.5em 0.4em 1.5em;
-		border: solid black;
-	}
+  @include omega(3n);
+  .goal {
+    padding-left: .5em;
+    padding-right: .5em;
+    padding-top: .2em;
+    padding-bottom: .2em;
+    margin-bottom: 1em;
+    background-color: white;
+    border-radius: 0.4em 1.5em 0.4em 1.5em;
+    border: solid black;
+  }
 }
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
