@@ -7,12 +7,21 @@
   <%= csrf_meta_tags %>
 </head>
 <body class="main-body">
+	
+<ul class="nav">
+  <li><a href="#home">Home</a></li>
+  <li><a href="#news">News</a></li>
+  <li><a href="#contact">Contact</a></li>
+  <% if signed_in? %>
+    <li id="sign-out"><%= link_to 'Sign out', sign_out_path, method: :delete %></li>
+  <% else %>
+    <li id="sign-in"><%= link_to 'Sign in', sign_in_path %></li>
+  <% end %>
+</ul>
+
 
   <% if signed_in? %>
-    <%= link_to 'Sign out', sign_out_path, method: :delete %>
-    Signed in as: <%= current_user.email %>
-  <% else %>
-    <%= link_to 'Sign in', sign_in_path %>
+    <p id="signed-in-as">Signed in as: <%= current_user.email %></p>
   <% end %>
 
   <div id="flash">
