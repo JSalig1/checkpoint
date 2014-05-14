@@ -3,15 +3,15 @@
 
 .nav {
   @include background(linear-gradient(rgba(10, 10, 10, 0.8), rgba(80, 80, 80, 0.8)) left repeat);
-  border-radius: .5em;
   @include span-columns(12);
+  border-radius: .5em;
   list-style-type:none;
-  margin:0;
-  padding:0;
-  overflow:hidden;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
 
   li {
-    float:left;
+    float: left;
   }
 
   #sign-out, #sign-in {
@@ -19,25 +19,25 @@
   }
 
   a:link,a:visited {
-    border: .1em solid rgba(10, 130, 10, 0.8);
     @include background(linear-gradient(rgba(10, 245, 10, 0.8), rgba(10, 130, 10, 1)) left repeat);
-    display:block;
-    width:120px;
-    font-weight:bold;
-    color:#FFFFFF;
-    background-color:#98bf21;
-    text-align:center;
-    padding:4px;
-    text-decoration:none;
-    text-transform:uppercase;
+    border: .1em solid rgba(10, 130, 10, 0.8);
+    display: block;
+    width: 120px;
+    font-weight: bold;
+    color: #FFFFFF;
+    background-color: #98bf21;
+    text-align: center;
+    padding: 4px;
+    text-decoration: none;
+    text-transform: uppercase;
   }
   a:hover, a:active {
-    background-color:#7A991A;
+    background-color: #7A991A;
   }
 }
 
 #signed-in-as {
-	float: right;
+  float: right;
 }
 
 #content-wrapper {
@@ -45,7 +45,6 @@
 }
 
 .form-pop {
-  z-index: 2;
   @include span-columns(4.05);
   @include shift(2.45);
   padding: 0.2em 0.5em;
@@ -54,13 +53,13 @@
   border: solid black;
   background-color: Coral;
   position: absolute;
+  z-index: 2;
 }
 
 .main-body {
-  font-family: $lucida-grande;
   @include outer-container;
-
   @include linear-gradient(#C6D8FF, #53607C);
+  font-family: $lucida-grande;
   min-height: 1000px;
 }
 
@@ -80,11 +79,11 @@
 }
 
 .x-to-delete {
-  z-index: 0;
-  -webkit-transform: rotate(-9deg);
+  @include transform(rotate(-9deg));
   position: relative;
   top: -75px;
   float: right;
+  z-index: 0;
 
   a:link {
     text-decoration: none;
@@ -95,7 +94,7 @@
 }
 
 #goal-header {
-  -webkit-transform: rotate(-30deg);
+  @include transform(rotate(-30deg));
   background-color: red;
   position: relative;
   left: -142px;
@@ -124,10 +123,10 @@
     overflow: hidden;
 
   .goal, .step {
+    @include background-image( radial-gradient(50% 50%, circle cover, white, #B0B0B0) );
     text-align: center;
     padding: 0.2em 0.5em;
     margin-bottom: 1em;
-    @include background-image( radial-gradient(50% 50%, circle cover, white, #B0B0B0) );
     border-radius: 0.4em 1.5em 0.4em 1.5em;
     border: 2px solid black;
   }
