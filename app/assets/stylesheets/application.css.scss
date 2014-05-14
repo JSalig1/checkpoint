@@ -1,16 +1,12 @@
 @import "bourbon";
 @import "neat";
 
-.main-body {
-  @include outer-container;
-  background-color: DarkSlateGray;
-}
-
 #content-wrapper {
   opacity: 0;
 }
 
 .form-pop {
+  z-index: 2;
   @include span-columns(4.05);
   @include shift(2.45);
   padding: 0.2em 0.5em;
@@ -21,20 +17,80 @@
   position: absolute;
 }
 
-#current_goals {
+.main-body {
+  font-family: $lucida-grande;
+  @include outer-container;
+
+  @include linear-gradient(#C6D8FF, #53607C);
+  min-height: 1000px;
+}
+
+.button {
+  position: relative;
+  background-color: green;
+  border-radius: 0.9em;
+  height: 1.4em;
+  bottom: -0.85em;
+
+  a:link {
+    position: relative;
+    bottom: -2px;
+    text-decoration: none;
+    color: white;
+  }
+}
+
+.x-to-delete {
+  z-index: 0;
+  -webkit-transform: rotate(-9deg);
+  position: relative;
+  top: -75px;
+  float: right;
+
+  a:link {
+    text-decoration: none;
+    color: grey;
+    font-family: "Brush Script MT", cursive;
+    font-size: 50px;
+  }
+}
+
+#goal-header {
+  -webkit-transform: rotate(-30deg);
+  background-color: red;
+  position: relative;
+  left: -142px;
+  top: -12px;
+
+  #goal-header-text {
+    color: white;
+    opacity: 0.8;
+  }
+}
+
+#goal-description {
+  position: relative;
+  top: -35px;
+  color: red;
+  font-size: 30px;
+  text-shadow: 1px 1px 0.5px rgba(0, 0, 0, 0.8);
+}
+
+#current_goals, #current_steps {
   @include span-columns(12);
 }
 
 .current-goal, .completed-goal {
-  @include span-columns(4);
-  @include omega(3n);
+  @include span-columns(3.9);
+    overflow: hidden;
 
-  .goal {
+  .goal, .step {
+    text-align: center;
     padding: 0.2em 0.5em;
     margin-bottom: 1em;
-    background-color: white;
+    @include background-image( radial-gradient(50% 50%, circle cover, white, #B0B0B0) );
     border-radius: 0.4em 1.5em 0.4em 1.5em;
-    border: solid black;
+    border: 2px solid black;
   }
 }
 

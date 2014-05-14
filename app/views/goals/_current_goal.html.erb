@@ -1,7 +1,13 @@
 <div class="current-goal">
   <%= div_for(current_goal) do %>
     <p>
-      <h3>Goal: <%= current_goal.description %></h3>
+      <div id="goal-header">
+        <h3 id="goal-header-text">Goal</h3>
+      </div>
+      <div class="x-to-delete">
+        <%= link_to "x", current_goal, method: :delete, confirm: "Really? Remove this Goal?", remote: true %>
+      </div>
+      <h3 id="goal-description"><strong><%= current_goal.description %></strong></h3>
       Target Day: <%= time_tag(current_goal.target_date) %>
       <%= link_to "(edit)", [:edit, current_goal], remote: true %>
 
@@ -17,9 +23,9 @@
           Complete: <%= form.check_to_complete %>
           <%= form.hidden_submit %>
         <% end %>
-
-        <%= link_to "Request Review", [:new, current_goal, :review_request], remote: true %><br>
-        <%= link_to "Remove this Goal", current_goal, method: :delete, confirm: "Really? Remove this Goal?", remote: true %><br>
+        <div class="button">
+          <%= link_to "Request Review", [:new, current_goal, :review_request], remote: true %>
+        </div>
       <% end %>
     </p>
   <% end %>

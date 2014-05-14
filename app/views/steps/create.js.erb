@@ -1,4 +1,7 @@
-$('#new_goal_step_form').remove();
+$("#content-wrapper").animate({
+    marginBottom: "0in"
+  }, 400 );
+$('#new_goal_step_form').fadeOut(200);
 <% if @goal.steps.count == 1 %>
   $('#<%= dom_id(@goal) %> .goal_step_links').append('<%= j link_to "View", @goal %>');
 <% end %>
