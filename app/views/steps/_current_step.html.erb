@@ -6,7 +6,7 @@
 	  <div class="x-to-delete">
 	    <%= link_to "x", current_step, method: :delete, confirm: "Really? Remove this Step?", remote: true %>
 	  </div>
-    <h3 id="goal-description"><strong><%= current_step.description %></strong></h3>
+    <h3 id="goal-description"><%= current_step.description %></h3>
     <p>Target Day: <%= time_tag(current_step.target_date) %></p>
 
     <% if current_user.owns_step? current_step %>

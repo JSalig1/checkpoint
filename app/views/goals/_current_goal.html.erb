@@ -7,7 +7,7 @@
       <div class="x-to-delete">
         <%= link_to "x", current_goal, method: :delete, confirm: "Really? Remove this Goal?", remote: true %>
       </div>
-      <h3 id="goal-description"><strong><%= current_goal.description %></strong></h3>
+      <h3 id="goal-description"><%= current_goal.description %></h3>
       Target Day: <%= time_tag(current_goal.target_date) %>
       <%= link_to "(edit)", [:edit, current_goal], remote: true %>
 
