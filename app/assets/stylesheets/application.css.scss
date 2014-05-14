@@ -1,7 +1,10 @@
 @import "bourbon";
 @import "neat";
 
-ul {
+.nav {
+  @include background(linear-gradient(rgba(10, 10, 10, 0.8), rgba(80, 80, 80, 0.8)) left repeat);
+  border-radius: .5em;
+  @include span-columns(12);
   list-style-type:none;
   margin:0;
   padding:0;
@@ -10,7 +13,14 @@ ul {
   li {
     float:left;
   }
+
+  #sign-out, #sign-in {
+    float: right;
+  }
+
   a:link,a:visited {
+    border: .1em solid rgba(10, 130, 10, 0.8);
+    @include background(linear-gradient(rgba(10, 245, 10, 0.8), rgba(10, 130, 10, 1)) left repeat);
     display:block;
     width:120px;
     font-weight:bold;
@@ -21,9 +31,13 @@ ul {
     text-decoration:none;
     text-transform:uppercase;
   }
-  a:hover,a:active {
+  a:hover, a:active {
     background-color:#7A991A;
   }
+}
+
+#signed-in-as {
+	float: right;
 }
 
 #content-wrapper {
