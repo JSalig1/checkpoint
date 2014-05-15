@@ -1,5 +1,6 @@
 <% if @goal.completed? %>
   $("#<%= dom_id(@goal) %>").slideUp();
+	$("#<%= dom_id(@goal) %>").remove();
   $("#completed_goals").append("<%= j render partial: 'completed_goal', object: @goal %>");
 <% else %>
   $("#content-wrapper").animate({
@@ -7,5 +8,5 @@
   }, 400 );
   $('#edit_goal_form').fadeOut(400);
   $("#<%= dom_id(@goal) %>").remove();
-  $('#current_goals').append('<%= j render partial: "current_goal", object: @goal %>');
+  $('<%= j render partial: "current_goal", object: @goal %>').insertBefore( ".new-goal" );
 <% end %>

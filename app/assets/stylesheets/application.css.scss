@@ -22,7 +22,7 @@
     @include background(linear-gradient(rgba(10, 245, 10, 0.8), rgba(10, 130, 10, 1)) left repeat);
     border: .1em solid rgba(10, 130, 10, 0.8);
     display: block;
-    width: 120px;
+    width: 150px;
     font-weight: bold;
     color: #FFFFFF;
     background-color: #98bf21;
@@ -31,6 +31,7 @@
     text-decoration: none;
     text-transform: uppercase;
   }
+
   a:hover, a:active {
     background-color: #7A991A;
   }
@@ -45,8 +46,8 @@
 }
 
 .form-pop {
-  @include span-columns(4.05);
-  @include shift(2.45);
+  @include span-columns(3);
+  @include shift(1.9);
   padding: 0.2em 0.5em;
   margin-bottom: 1em;
   border-radius: 0.4em;
@@ -58,9 +59,9 @@
 
 .main-body {
   @include outer-container;
-  @include linear-gradient(#C6D8FF, #53607C);
+  background-color: #C6D8FF;
   font-family: $lucida-grande;
-  min-height: 1000px;
+  min-height: 1100px;
 }
 
 .button {
@@ -83,7 +84,7 @@
   position: relative;
   top: -75px;
   float: right;
-  z-index: 0;
+  z-index: -0;
 
   a:link {
     text-decoration: none;
@@ -106,19 +107,38 @@
   }
 }
 
+#step-header {
+  @include transform(rotate(-30deg));
+  background-color: orange;
+  position: relative;
+  left: -115px;
+  top: -1px;
+
+  #step-header-text {
+    color: white;
+    opacity: 0.8;
+  }
+}
+
 #goal-description {
   position: relative;
   top: -35px;
   color: red;
   font-size: 30px;
   text-shadow: 1px 1px 0.5px rgba(0, 0, 0, 0.8);
+
+  a:link {
+    text-decoration: none;
+    font-size: 50px;
+    color: grey;
+  }
 }
 
-#current_goals, #current_steps {
+#current_goals, #current_steps, #completed_goals, #completed_steps {
   @include span-columns(12);
 }
 
-.current-goal, .completed-goal {
+.current-goal, .completed-goal, .new-goal, .new-step {
   @include span-columns(3.9);
     overflow: hidden;
 
@@ -129,6 +149,11 @@
     margin-bottom: 1em;
     border-radius: 0.4em 1.5em 0.4em 1.5em;
     border: 2px solid black;
+  }
+
+  #new {
+    opacity: 0.2;
+    height: 150px;
   }
 }
 

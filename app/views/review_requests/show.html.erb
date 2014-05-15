@@ -6,15 +6,20 @@
 
 <p><%= @review_request.body %></p>
 
-<div>
-  <%= render partial: 'goals/current_goal', object: @goal %>
+<div id="current_goals">
+  <%= render partial: 'goals/goal_basic', object: @goal %>
 </div>
 
 <div class="goal_step_links">
-  Steps: <%= link_to "New Step", [:new, @goal, :step], id: "new_link", remote: true %>
+  <h2>Checkpoints for this goal</h2>
+  <div class="new-item"><%= link_to "+", [:new, @goal, :step], id: "new_link", remote: true %></div>
   <div id="current_steps">
     <%= render partial: 'steps/current_step', collection: @goal.current_steps %>
+    <%= render partial: "steps/new_step" %>
   </div>
+
+  <h2>Completed</h2>
+
   <div id="current_steps">
     <%= render partial: 'steps/completed_step', collection: @goal.completed_steps %>
   </div>

@@ -23,9 +23,15 @@
           Complete: <%= form.check_to_complete %>
           <%= form.hidden_submit %>
         <% end %>
-        <div class="button">
-          <%= link_to "Request Review", [:new, current_goal, :review_request], remote: true %>
-        </div>
+        <% if current_user.has_coaches? %>
+          <div class="button">
+            <% if current_goal.has_open_review? %>
+              <%= link_to "Review Open", current_goal %>
+            <% else %>
+              <%= link_to "Request Review", [:new, current_goal, :review_request], remote: true %>
+            <% end %>
+          </div>
+        <% end %>
       <% end %>
     </p>
   <% end %>

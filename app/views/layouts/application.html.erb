@@ -7,18 +7,20 @@
   <%= csrf_meta_tags %>
 </head>
 <body class="main-body">
-	
+
 <ul class="nav">
-  <li><a href="#home">Home</a></li>
-  <li><a href="#news">News</a></li>
-  <li><a href="#contact">Contact</a></li>
+  <li><%= link_to 'Home', dashboard_path %></li>
   <% if signed_in? %>
+    <li><%= link_to 'Goals', goals_path %></li>
+    <% if current_user.coaches_athletes? %>
+      <li><%= link_to 'Athletes', athletes_path %></li>
+      <li><%= link_to 'Coach Reviews', review_requests_path %></li>
+    <% end %>
     <li id="sign-out"><%= link_to 'Sign out', sign_out_path, method: :delete %></li>
   <% else %>
     <li id="sign-in"><%= link_to 'Sign in', sign_in_path %></li>
   <% end %>
 </ul>
-
 
   <% if signed_in? %>
     <p id="signed-in-as">Signed in as: <%= current_user.email %></p>
