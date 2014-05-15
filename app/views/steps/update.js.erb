@@ -1,7 +1,12 @@
 <% if @step.completed? %>
+  $("#<%= dom_id(@step) %>").slideUp();
   $("#<%= dom_id(@step) %>").remove();
   $("#completed_steps").append("<%= j render partial: 'completed_step', object: @step %>");
 <% else %>
-  $('#edit_goal_step_form').remove();
-  $("#<%= dom_id(@step) %>").html("<%= j render partial: 'current_step', object: @step %>");
+  $("#content-wrapper").animate({
+    marginBottom: "0in"
+  }, 400 );
+  $('#edit_goal_step_form').fadeOut(400);
+  $("#<%= dom_id(@step) %>").remove();
+  $('<%= j render partial: "current_step", object: @step %>').insertBefore( ".new-step" );
 <% end %>

@@ -26,4 +26,8 @@ class Goal < ActiveRecord::Base
   def has_steps?
     steps != []
   end
+
+  def has_open_review?
+    review_requests != []
+  end
 end

@@ -1,0 +1,11 @@
+<div class="current-goal">
+  <%= div_for(goal_basic) do %>
+    <p>
+      <div id="goal-header">
+        <h3 id="goal-header-text">Goal</h3>
+      </div>
+      <h3 id="goal-description"><%= goal_basic.description %></h3>
+      Target Day: <%= time_tag(goal_basic.target_date) %>
+    </p>
+  <% end %>
+</div>
