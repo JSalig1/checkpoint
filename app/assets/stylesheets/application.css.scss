@@ -46,8 +46,8 @@
 }
 
 .form-pop {
-  @include span-columns(4.05);
-  @include shift(2.45);
+  @include span-columns(3);
+  @include shift(1.9);
   padding: 0.2em 0.5em;
   margin-bottom: 1em;
   border-radius: 0.4em;
@@ -59,9 +59,9 @@
 
 .main-body {
   @include outer-container;
-  @include linear-gradient(#C6D8FF, #53607C);
+  background-color: #C6D8FF;
   font-family: $lucida-grande;
-  min-height: 1000px;
+  min-height: 1100px;
 }
 
 .button {
