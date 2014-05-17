@@ -1,8 +1,8 @@
 <div class="current-goal">
   <%= div_for(current_goal) do %>
     <p>
-      <div id="goal-header">
-        <h3 id="goal-header-text">Goal</h3>
+      <div class="item-header" id="goal-header">
+        <h3 class="item-header-text" id="goal-header-text">Goal</h3>
       </div>
       <div class="x-to-delete">
         <%= link_to "x", current_goal, method: :delete, confirm: "Really? Remove this Goal?", remote: true %>

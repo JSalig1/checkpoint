@@ -1,6 +1,6 @@
-$('#new_goal_step_form').remove();
-$('.nav_bar').after('<%= j render "new" %>');
-$("#content-wrapper").animate({
-    opacity: 0.9,
-    marginBottom: "2.3in"
+$('#content-wrapper').remove();
+$('#current_goals').before('<%= j render "new" %>');
+$('#content-wrapper').animate({
+    opacity: 0.96,
+    marginTop: '-0.4in'
   }, 400 );
