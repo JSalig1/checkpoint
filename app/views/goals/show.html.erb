@@ -1,15 +1,10 @@
 <h1>Checkpoints</h1>
 
-<nav class="nav_bar">
-
-</nav>
-
 <div id="current_goals">
   <%= render partial: 'goal_basic', object: @goal %>
 </div>
 
 <h2>Checkpoints for this goal</h2>
-<div class="new-item"><%= link_to "+", [:new, @goal, :step], id: "new_link", remote: true %><div>
 
 <div id="current_steps">
   <%= render partial: 'steps/current_step', collection: @current_steps %>
