@@ -9,8 +9,8 @@
 <body class="main-body">
 
 <ul class="nav">
-  <li><%= link_to 'Home', dashboard_path %></li>
   <% if signed_in? %>
+    <li><%= link_to 'Home', dashboard_path %></li>
     <li><%= link_to 'Goals', goals_path %></li>
     <% if current_user.coaches_athletes? %>
       <li><%= link_to 'Athletes', athletes_path %></li>
